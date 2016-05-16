@@ -4,7 +4,7 @@
 <div class="container">
 
 
-    <form method="post" class="form-signin" action="{{url(action('FacebookLoginController@store'))}}">
+    <form method="post" class="form-signin" action="{{url(action('SosmedController@store'))}}">
         @include('frontend.messages.error')
 
         <h2 class="form-signin-heading">Form Registrasi</h2>

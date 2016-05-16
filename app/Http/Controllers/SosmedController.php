@@ -3,24 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\User;
 use DB;
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 
-class RegisterController extends Controller
+class SosmedController extends Controller
 {
-    public function __construct(){
-        $this->middleware('guest');
-    }
-    public function index(){
-        return view('frontend.Registrasi.registerForm');
+    public function create(){
+        return view('frontend.Registrasi.registerSosialMedia');
     }
 
     public function store(RegisterRequest $request){
-
         $regis = new User();
         $regis->username = Input::get('username');
         $regis->email = Input::get('email');
@@ -34,6 +30,5 @@ class RegisterController extends Controller
         }
         flash()->error('registrasi gagal');
         return redirect(url(action('LoginController@index')));
-
     }
 }

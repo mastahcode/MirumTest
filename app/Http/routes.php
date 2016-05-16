@@ -8,11 +8,16 @@ Route::get('/category/{category}','BlogFrontController@showKategori');
 
 //front
 Route::resource('/auth/login','LoginController');
-
+Route::resource('auth/sosmed','SosmedController',['only'=>['create','store']]);
 //FB
 Route::get('/auth/facebook','FacebookLoginController@getFacebook');
 Route::get('/auth/facebook/callback','FacebookLoginController@getDataFacebook');
-Route::resource('auth/facebook','FacebookLoginController',['only'=>['create','store']]);
+
+
+//twitter
+Route::get('/auth/twitter','TwitterLoginController@getTwitter');
+Route::get('/auth/twitter/callback','TwitterLoginController@getDataTwitter');
+
 
 Route::post('/auth/login','LoginController@postLogin');
 Route::get('/auth/logout','LoginController@getLogout');

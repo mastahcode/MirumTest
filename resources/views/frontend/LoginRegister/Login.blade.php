@@ -11,8 +11,8 @@
 
         <h2 class="form-signin-heading">Please sign in</h2>
 
-            <a href="">FB</a> |
-            <a href="">Twitter</a>
+            <a href="{{url(action('FacebookLoginController@getFacebook'))}}">Facebook</a> |
+            <a href="{{url(action('TwitterLoginController@getTwitter'))}}">Twitter</a>
 
 
         <label for="inputEmail" class="sr-only">Email address</label>

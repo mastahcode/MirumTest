@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests;
+use App\Http\Requests\RegisterRequest;
 use App\User;
 use Auth;
 use DB;
@@ -16,13 +17,6 @@ use Redirect;
 class FacebookLoginController extends Controller
 {
 
-    public function create(){
-        return view('frontend.Registrasi.registerSosialMedia');
-    }
-
-    public function store(){
-        return 'disimpan';
-    }
     public function getFacebook()
     {
         return Socialite::driver('facebook')->redirect();
@@ -39,19 +33,15 @@ class FacebookLoginController extends Controller
 
         $authUser = $this->findOrCreateUser($user);
         $cekEmail = User::where('email', $user->email)->first();
-        //$cekUsername = User::where('username',$user->user['login'])->first();
+
         if (!empty($cekEmail)) {
             Auth::login($cekEmail, true);
             return redirect(url(action('BlogFrontController@index')));
 
         }
-
         else {
-            return view('frontend.Registrasi.registerForm', compact('user'));
+            return redirect(url(action('SosmedController@create')));
         }
-        /*Auth::login($authUser, true);
-        return Redirect::to('home');*/
-
     }
 
     public function registerFb(){
@@ -70,14 +60,14 @@ class FacebookLoginController extends Controller
         return redirect(url(action('LoginController@index')));
     }
 
-    private function findOrCreateUser($githubUser)
+    private function findOrCreateUser($facebookUser)
     {
-        $authUser = User::where('email', $githubUser->email)->first();
+        $authUser = User::where('email', $facebookUser->email)->first();
         if ($authUser) {
             return $authUser;
         }
 
-        return redirect(url(action('FacebookLoginController@create')));
+        return redirect(url(action('SosmedController@create')));
     }
 
 
