@@ -2,6 +2,7 @@
 
 
 Route::resource('/','BlogFrontController',['only'=>['index']]);
+Route::get('about','BlogFrontController@aboutMe');
 Route::get('/{slug}','BlogFrontController@show');
 Route::get('/category/{category}','BlogFrontController@showKategori');
 
@@ -25,6 +26,8 @@ Route::resource('/auth/register','RegisterController');
 
 //Back
 Route::resource('backend/blog','BlogBackendController');
+
+Route::resource('backend/admin','AdminController');
 
 
 

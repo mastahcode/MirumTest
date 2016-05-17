@@ -32,4 +32,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(PostArtile::class);
     }
+
+    public function hasRole($slug)
+    {
+
+        if ($this->role->slug === $slug)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

@@ -13,10 +13,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li>
-                <a href="#">Kategori</a>
-            </li>
-            <li>
-                <a href="#">About me</a>
+                <a href="{{url(action('BlogFrontController@aboutMe'))}}">About me</a>
             </li>
         </ul>
 
@@ -29,8 +26,11 @@
                 <li><a href="{{url(action('RegisterController@index'))}}">{{Auth::user()->username}}</a></li>
                 <li><a href="{{url(action('LoginController@getLogout'))}}">Logout</a></li>
                 <li><a href="{{url(action('BlogBackendController@index'))}}">Backend</a></li>
-            @endif
+                @if(Auth::user()->hasRole('admin'))
+                    <li><a href="{{url(action('AdminController@index'))}}">Admin</a></li>
+                @endif
 
+            @endif
 
 
         </ul>

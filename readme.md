@@ -21,6 +21,8 @@ Jangan lupa untuk mengunjungi website Belajar Terlengkap [Mastahcode website](ht
 4. sesuaikan konfgurasi database
 5. php artisan migrate
 6. php artisan db:seed --class=TableSeedOke
+7. Login sebagai admin dengan: username: waviq dan password: waviq
+8. Login sebagai user biasa, tinggal create user
 
 ## Official Documentation
 
