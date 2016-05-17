@@ -4,7 +4,8 @@
 
     @section('content')
         Saya seorang web, Mobile, dan Dekstop Developer, punya pengalaman lumayan banyak di bidang tersebut.
-        Menguasai beberapa jenis bahasa pemrograman dan beberapa macam framework
+        Bisa beberapa jenis bahasa pemrograman dan beberapa macam framework. Hobby lain adalah jalan-jalan.
+        Cita-cita menjadi anak yang sholeh dan bisa bermanfaat untuk orang lain.
         <br/><br/>
         Email: <a href="mailto:waviq.subkhi@gmail.com" class="">Waviq</a> <br/>
         phone: 085642868886 <br/>

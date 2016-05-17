@@ -22,7 +22,7 @@
 
         <div>
             <label>
-                Lupa password? click <a href="">here</a>
+                Lupa password? click <a href="{{url(action('PasswordRecoverResetController@getPasswordReset'))}}">here</a>
 
             </label>
         </div>

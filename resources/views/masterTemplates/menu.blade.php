@@ -26,6 +26,7 @@
                 <li><a href="{{url(action('RegisterController@index'))}}">{{Auth::user()->username}}</a></li>
                 <li><a href="{{url(action('LoginController@getLogout'))}}">Logout</a></li>
                 <li><a href="{{url(action('BlogBackendController@index'))}}">Backend</a></li>
+                <li><a href="{{url(action('PasswordRecoverResetController@getGantiPassword'))}}">Ganti Password</a></li>
                 @if(Auth::user()->hasRole('admin'))
                     <li><a href="{{url(action('AdminController@index'))}}">Admin</a></li>
                 @endif
